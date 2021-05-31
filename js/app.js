@@ -17,7 +17,10 @@ const Seattle = {
 
     NumberOfCustomerPerHour: function(){
         for(let i=0; i < this.HoursArr.length; i++) {
-            this.CustomerPerHour[i] = Math.floor(Math.random() * (this.MaxCustomerPerHour - this.MinCustomerPerHour + 1) ) + this.MinCustomerPerHour;
+            this.CustomerPerHour[i] = Math.floor(Math.random() * (this.MaxCustomerPerHour - this.MinCustomerPerHour + 1) ) + this.MinCustomerPerHour; // this is good way only if we have the customer per hour array is empty, if it has 2 values it is gonna be wrong
+            //this.CustomerPerHour.push(this.CookiePerHour[Math.floor(Math.random() * (this.MaxCustomerPerHour - this.MinCustomerPerHour + 1) ) + this.MinCustomerPerHour;]);
+
+
         }
     },
 
