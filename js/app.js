@@ -337,10 +337,12 @@ Lima.render();*/
 // Lab 07 :CONSTRUCTORS
 let firstContainer = document.getElementById('CookiesSales');
 
-let hoursArr= ['6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM'];
-
 let tableEl = document.createElement('table')
 firstContainer.appendChild(tableEl);
+
+let hoursArr= ['6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM', '5:00 PM', '6:00 PM', '7:00 PM'];
+
+
 
 function Cookie(MinCustomerPerHour, MaxCustomerPerHour, AvgCookiePerCustomer, ShopLocation ) {
 this.MinCustomerPerHour = MinCustomerPerHour;
@@ -379,7 +381,7 @@ Cookie.prototype.TotalSales= function(){
         }
     }
 
-    Cookie.prototype.firtRowRender = function(){
+    /*Cookie.prototype.firtRowRender = function(){
         let tableEl = document.createElement('table')
         firstContainer.appendChild(tableEl);
         let firstRow = document.createElement('tr');
@@ -392,16 +394,27 @@ Cookie.prototype.TotalSales= function(){
             firstRow.appendChild(thEL);
             thEL.textContent = hoursArr[i];  
         }
+    }*/
+
+    Cookie.prototype.tableHeader = function(){
+        let firstRow = document.createElement('tr');
+        tableEl.appendChild(firstRow);
+        
+        let th0 = document.createElement('th');
+        firstRow.appendChild(th0);
+        th0.textContent = ('Locations'); 
+
+        for (let i=0; i<14; i++){
+            let thEL = document.createElement('th');
+            firstRow.appendChild(thEL);
+            thEL.textContent = hoursArr[i];  
+        }
+
     }
 
     Cookie.prototype.render = function(){
         
-
-        let firstRow = document.createElement('tr');
-        tableEl.appendChild(firstRow);
-        
-
-
+    
         let secondRow = document.createElement('tr');
         tableEl.appendChild(secondRow);
 
@@ -437,7 +450,7 @@ let Lima = new Cookie (2, 16, 4.6, 'Lima');
 
 Seattle.NumberOfCustomerPerHour();
 Seattle.NumberOfCookiesPerHour();
-Seattle.firtRowRender();
+Seattle.tableHeader();
 Seattle.render();
 
 Tokyo.NumberOfCustomerPerHour();
