@@ -347,6 +347,8 @@ let locations = [];
 let finalTotal=0;
 let cookiesTotalGlobal = 0;
 
+let arrayOfObjects = [];
+
 
 
 
@@ -360,6 +362,7 @@ this.CookiePerHour = [];
 this.CookiesArr = [];
 this.cookiesTotal = 0,
 locations.push(this);
+arrayOfObjects.push(this);
 
 
 }
@@ -413,11 +416,6 @@ Cookie.prototype.NumberOfCookiesPerHour = function(){
         th1.textContent = ('Daily Location Total'); 
 
     }
-    
-
-    
-    
-
     
 
 
@@ -505,6 +503,16 @@ let Dubai = new Cookie(11, 38, 3.7, 'Dubai');
 let Paris = new Cookie(20, 38, 2.3, 'Paris' );
 
 let Lima = new Cookie(2, 16, 4.6, 'Lima');
+
+
+/*for (let i=0; i<arrayOfObjects; i++){
+    arrayOfObjects[i].NumberOfCustomerPerHour();
+    arrayOfObjects[i].NumberOfCookiesPerHour();
+    arrayOfObjects[i].tableHeader();
+    
+} */
+
+
 
 Seattle.NumberOfCustomerPerHour();
 Seattle.NumberOfCookiesPerHour();
