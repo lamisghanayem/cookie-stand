@@ -505,16 +505,22 @@ let Paris = new Cookie(20, 38, 2.3, 'Paris' );
 let Lima = new Cookie(2, 16, 4.6, 'Lima');
 
 
-/*for (let i=0; i<arrayOfObjects; i++){
+
+Seattle.tableHeader();
+
+
+
+// we can put it inside a function
+for (let i=0; i<arrayOfObjects.length; i++){
     arrayOfObjects[i].NumberOfCustomerPerHour();
     arrayOfObjects[i].NumberOfCookiesPerHour();
-    arrayOfObjects[i].tableHeader();
-    
-} */
+    arrayOfObjects[i].render();  
+} 
+
+tablelfooter();
 
 
-
-Seattle.NumberOfCustomerPerHour();
+/*Seattle.NumberOfCustomerPerHour();
 Seattle.NumberOfCookiesPerHour();
 Seattle.tableHeader();
 Seattle.render();
@@ -533,7 +539,7 @@ Paris.render();
 
 Lima.NumberOfCustomerPerHour();
 Lima.NumberOfCookiesPerHour();
-Lima.render();
+Lima.render();*/
 
-tablelfooter();
+
 
