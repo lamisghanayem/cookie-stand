@@ -536,7 +536,7 @@ Lima.render();*/
 
 // Lab09 Forms:
 
-const form = document.getElementById('salmonForm');
+/*const form = document.getElementById('salmonForm');
 
 form.addEventListener('submit', handleSubmitting);
 
@@ -556,12 +556,12 @@ form.addEventListener('submit', handleSubmitting);
     let newCookie = new Cookie (newMin.value, newMax.value, newAvg.value, newshop.value );
     //console.log(newCookie);
 
-  newCookie.render();
-    tablelfooter();
+  //newCookie.render();
+   
 
 
 
-}
-
+}*/
+tablelfooter();
 
 
