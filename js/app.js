@@ -347,9 +347,8 @@ let locations = [];
 let finalTotal=0;
 let cookiesTotalGlobal = 0;
 
+
 let arrayOfObjects = [];
-
-
 
 
 function Cookie(MinCustomerPerHour, MaxCustomerPerHour, AvgCookiePerCustomer, ShopLocation ) {
@@ -397,8 +396,7 @@ Cookie.prototype.NumberOfCookiesPerHour = function(){
     }*/
 
     
-
-    Cookie.prototype.tableHeader = function(){
+ Cookie.prototype.tableHeader = function(){
         let firstRow = document.createElement('tr');
         tableEl.appendChild(firstRow);
         
@@ -419,7 +417,7 @@ Cookie.prototype.NumberOfCookiesPerHour = function(){
     
 
 
-    Cookie.prototype.render = function(){
+ Cookie.prototype.render = function(){
         
     
         let secondRow = document.createElement('tr');
@@ -428,6 +426,7 @@ Cookie.prototype.NumberOfCookiesPerHour = function(){
         let th2 = document.createElement('th');
         secondRow.appendChild(th2);
         th2.textContent = this.ShopLocation;  
+ 
 
         for (let i=0; i<14; i++){
             let tdEl = document.createElement('td');
@@ -457,7 +456,7 @@ Cookie.prototype.NumberOfCookiesPerHour = function(){
   
     };*/
 
-    function tablelfooter (){
+function tablelfooter (){
         let lastRow = document.createElement('tr');
         tableEl.appendChild(lastRow);  
 
@@ -486,14 +485,9 @@ Cookie.prototype.NumberOfCookiesPerHour = function(){
 
     } 
 
-   
-   
-    
-
-    
-
 
 //instances
+
 let Seattle = new Cookie(23, 65, 6.3, 'Seattle' );
 
 let Tokyo = new Cookie(3, 14, 1.2, 'Tokyo' );
@@ -506,9 +500,9 @@ let Lima = new Cookie(2, 16, 4.6, 'Lima');
 
 
 
+
+//Calling the functions
 Seattle.tableHeader();
-
-
 
 // we can put it inside a function
 for (let i=0; i<arrayOfObjects.length; i++){
@@ -517,7 +511,6 @@ for (let i=0; i<arrayOfObjects.length; i++){
     arrayOfObjects[i].render();  
 } 
 
-tablelfooter();
 
 
 /*Seattle.NumberOfCustomerPerHour();
@@ -540,6 +533,35 @@ Paris.render();
 Lima.NumberOfCustomerPerHour();
 Lima.NumberOfCookiesPerHour();
 Lima.render();*/
+
+// Lab09 Forms:
+
+const form = document.getElementById('salmonForm');
+
+form.addEventListener('submit', handleSubmitting);
+
+ function handleSubmitting (event){
+
+    event.preventDefault();
+
+    let newMin = event.target.MinCustomer.value;
+    // console.log(event.target.MinCustomer.value);
+
+    let newMax = event.target.MaxCustomer.value;
+
+    let newAvg = event.target.AvgCookie.value
+
+    let newshop = event.target.NewLocation.value
+    
+    let newCookie = new Cookie (newMin.value, newMax.value, newAvg.value, newshop.value );
+    //console.log(newCookie);
+
+  newCookie.render();
+    tablelfooter();
+
+
+
+}
 
 
 

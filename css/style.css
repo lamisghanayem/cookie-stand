@@ -79,3 +79,20 @@
     td{
         color: black;
     }
+
+    #shopLocation{
+        margin: 100px;
+        font-weight: bold;
+        position: absolute;
+        top: 450px;
+        left: 500px;
+    }
+    h3{
+        margin-bottom: 10px;
+    }
+    #fieldborder{border: black 2px solid;
+        padding: 15px;
+
+    }
+
+    
