@@ -536,32 +536,39 @@ Lima.render();*/
 
 // Lab09 Forms:
 
-/*const form = document.getElementById('salmonForm');
+const form = document.getElementById('salmonForm');
 
 form.addEventListener('submit', handleSubmitting);
 
  function handleSubmitting (event){
 
+
     event.preventDefault();
 
-    let newMin = event.target.MinCustomer.value;
-    // console.log(event.target.MinCustomer.value);
-
-    let newMax = event.target.MaxCustomer.value;
-
-    let newAvg = event.target.AvgCookie.value
-
-    let newshop = event.target.NewLocation.value
-    
-    let newCookie = new Cookie (newMin.value, newMax.value, newAvg.value, newshop.value );
-    //console.log(newCookie);
-
-  //newCookie.render();
    
 
+    let newMin = Number( event.target.MinCustomer.value);
+    // console.log(event.target.MinCustomer.value);
 
+    let newMax = Number (event.target.MaxCustomer.value);
 
-}*/
+    let newAvg = parseFloat(Number( event.target.AvgCookie.value));
+    //let newAvg = Number( event.target.AvgCookie.value);
+    let newshop = event.target.NewLocation.value
+    
+    let newCookie = new Cookie (newMin, newMax, newAvg, newshop );
+    //console.log(newCookie);
+    //console.log(newCookie);
+
+newCookie.NumberOfCustomerPerHour();
+newCookie.NumberOfCookiesPerHour();
+newCookie.render();
+tableEl.deleteRow(6);
 tablelfooter();
+
+}
+
+tablelfooter();
+
 
 
